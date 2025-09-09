@@ -61,7 +61,7 @@ Before running the app, ensure the following environment variables are set in a 
 - `DATABRICKS_HOST`: Your Databricks server hostname.
 - `DATABRICKS_TOKEN`: Your Databricks access token for authentication.
 - `DATABRICKS_WAREHOUSE_PATH`: The HTTP path for your Databricks SQL warehouse.
-- `ENV`: Set to `local` for development mode.
+- `ENV`: Set to `DEV` for development mode.
 
 Example `.env` file:
 
@@ -69,7 +69,7 @@ Example `.env` file:
 DATABRICKS_HOST=your-databricks-hostname
 DATABRICKS_TOKEN=your-access-token
 DATABRICKS_WAREHOUSE_PATH=your-http-path
-ENV=local
+ENV=DEV
 ```
 
 ---

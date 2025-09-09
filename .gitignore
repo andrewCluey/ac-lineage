@@ -175,4 +175,3 @@ cython_debug/
 
 /front-end/node_modules/
 .databricks
-front-end/dist
