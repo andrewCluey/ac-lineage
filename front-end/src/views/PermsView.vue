@@ -12,26 +12,26 @@
                     {{ isRefreshing ? 'Refreshing...' : 'Refresh Cache' }}
             </button>
         </div>
-    </div>
-    <div v-show="entity.length > 0" class="row">
-        <div class="col">
-                <div class="btn-group me-3" role="group" aria-label="View toggle">
-                    <input type="radio" class="btn-check" name="btnradio" id="tileName" value="tiles" autocomplete="off" checked v-model="selectedModel">
-                    <label class="btn btn-outline-danger" for="tileName" >Tiles</label>
-                    <input type="radio" class="btn-check" name="btnradio" id="tableName" value="table" autocomplete="off" v-model="selectedModel">
-                    <label class="btn btn-outline-danger" for="tableName">Table</label>
-                </div>
-            </div>
             <div class="col">
                 <div class="btn-group me-3" role="group" aria-label="Account Users toggle">
                     <input type="radio" class="btn-check" name="accountUsers" id="accountUsersOff" :value="false" autocomplete="off" v-model="accountUsersEnabled">
-                    <label class="btn btn-outline-secondary" for="accountUsersOff">Account Users Off</label>
+                    <label class="btn btn-outline-secondary" for="accountUsersOff">Ac Users Off</label>
                     <input type="radio" class="btn-check" name="accountUsers" id="accountUsersOn" :value="true" autocomplete="off" v-model="accountUsersEnabled">
-                    <label class="btn btn-outline-secondary" for="accountUsersOn">Account Users On</label>
+                    <label class="btn btn-outline-secondary" for="accountUsersOn">Ac Users On</label>
                 </div>
             </div>
     </div>
     <TheGraph :entity="entity" :account-users-enabled="accountUsersEnabled"></TheGraph>
+    <div v-show="entity.length > 0" class="row">
+        <div class="col">
+            <div class="btn-group me-3" role="group" aria-label="View toggle">
+                <input type="radio" class="btn-check" name="btnradio" id="tileName" value="tiles" autocomplete="off" checked v-model="selectedModel">
+                <label class="btn btn-outline-danger" for="tileName" >Tiles</label>
+                <input type="radio" class="btn-check" name="btnradio" id="tableName" value="table" autocomplete="off" v-model="selectedModel">
+                <label class="btn btn-outline-danger" for="tableName">Table</label>
+            </div>
+        </div>
+    </div>
     <div v-show="selectedModel !== 'table'" class="row mt-2">
     <TheTiles v-if="data.membership.length > 0" :items="data.membership" item-type="Membership"></TheTiles>
     <TheTiles v-if="data.catalogs.length > 0" :items="data.catalogs" item-type="Catalog"></TheTiles>
